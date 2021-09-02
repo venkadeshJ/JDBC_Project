@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Jdbc {
+public class JdbcDao {
 
 	public static void main(String[] args) throws SQLException {
 		// TODO Auto-generated method stub
@@ -22,11 +22,12 @@ public class Jdbc {
 		
 		//String s = "DELETE FROM ACTOR WHERE ACTOR_ID=201"; //Delete query
 		
-		String s="select first_name from actor";
+		String s="select first_name from actor"; //Select query
 		
 		
 		
 		//3)Execute Statement/query
+		//stmt.execute(s);
 		ResultSet re=stmt.executeQuery(s);
 		
 		while(re.next()) {
