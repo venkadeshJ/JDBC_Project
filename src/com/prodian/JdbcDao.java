@@ -22,17 +22,21 @@ public class JdbcDao {
 		
 		//String s = "DELETE FROM ACTOR WHERE ACTOR_ID=201"; //Delete query
 		
-		String s="select first_name from actor"; //Select query
+		String s="select first_name,last_name,phone from customer , address where address.address_id = customer_id order by last_name "; //Select query from different tables
 		
 		
 		
 		//3)Execute Statement/query
 		//stmt.execute(s);
 		ResultSet re=stmt.executeQuery(s);
+		System.out.println("FIRST_NAME" +"  "+"LAST_NAME"+ "   "+"PHONE");
+
 		
 		while(re.next()) {
 			String fname=re.getString("FIRST_NAME");
-			System.out.println(fname);
+			String lname=re.getString("LAST_NAME");
+			String phone=re.getString("PHONE");
+			System.out.println(fname +"  "+lname+ "   "+phone);
 			
 		}
 		
